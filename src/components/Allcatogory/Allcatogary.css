@@ -1,0 +1,40 @@
+/* ProductList.css */
+.product-card {
+    border: 1px solid transparent; 
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, border 0.3s; 
+    background-color:white; 
+    color: black; 
+    overflow: hidden; 
+    font-family:inherit;
+    font-size: medium;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    border: 2px solid #000; 
+  }
+  
+  .product-image-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .star {
+    color: gold;
+    font-size: 1.2rem;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .view-button {
+    width: 100%;
+    background-color: black;
+    font-weight: 600;
+  }
+  

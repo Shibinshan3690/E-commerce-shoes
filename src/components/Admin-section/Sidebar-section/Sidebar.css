@@ -1,0 +1,46 @@
+.sidebar {
+    border-right: 1px solid #ccc;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .brand i {
+    font-size: 2rem;
+    color: #007bff;
+  }
+  
+  .brand-name {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    transition: background-color 0.2s;
+    border-radius: 0;
+  }
+  
+  .list-group-item:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .list-group-item i {
+    font-size: 1.5rem;
+  }
+  
+  .list-group-item span {
+    margin-left: 10px;
+    color: #343a40;
+  }
+  
