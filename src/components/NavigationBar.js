@@ -105,7 +105,7 @@ const NavigationBar = () => {
                   <TbLogout className="ml-3" />
                 </Nav.Link>
                 <Nav.Link style={{ fontSize: "27px", color: "white" }}>
-                  <RiAdminFill className="ml-3"  onClick={()=>navagate("/Adminsection")} />
+                  <RiAdminFill className="ml-3"  onClick={()=>navagate("/adminLogin")} />
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

@@ -26,7 +26,7 @@ const navigate=useNavigate();
             <Card.Body>
               <Card.Title>{item.title}</Card.Title>
               <Card.Text>
-                {Array(item.star).fill(<span key={item.id} className="star">★</span>)}
+                {Array(item.star).fill(<span key={item.id} className="star">★★★★</span>)}
               </Card.Text>
               <div className="product-price">
                 $ {item.newPrice}

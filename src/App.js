@@ -17,6 +17,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import Admin from './components/Admin-section/Admin';
 import Productsadmin from './components/Products-admi n/Productsadmin';
 import EditProducts from './components/Products-admi n/EditProducts';
+import CostomersAdmin from './components/Admin-section/CostomersAdmin';
+import AddProduct from './components/Products-admi n/AddProduct';
+import DashboardAdmin from './components/Products-admi n/DashboardAdmin';
+import AdminLogin from './components/Admin-section/AdminLogin';
 
 
 
@@ -58,10 +62,13 @@ function App() {
      <Route path='/login'  element={<Login/>}></Route>
      <Route path='/registaration' element={<Registration/>}></Route>
      <Route  path='/cart' element={<Cart/>}></Route>
+     <Route path='/adminLogin' element={<AdminLogin/>}> </Route>
      <Route path='/Adminsection' element={<Admin/>}></Route>
      <Route path='/products' element={<Productsadmin/>}></Route>
      <Route path='/adminedit/:id'  element={<EditProducts/>}></Route>
-     
+      <Route path='/Costomers' element={<CostomersAdmin/>}></Route>
+      <Route path='/addproduct' element={<AddProduct/>}></Route>
+      <Route path='/dashboard' element={<DashboardAdmin/>}></Route>
      
  
      </Routes>

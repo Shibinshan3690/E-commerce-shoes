@@ -11,15 +11,17 @@ const Registration = () => {
  const {user,setUser}=useContext(userContext);
 const nameRef=useRef();
 const passRef=useRef();
+const emailRef=useRef();
   
 
 const handleClick=()=>{
   const name= nameRef.current.value ;
   const pass= passRef.current.value; 
-  const value={name:name,password:pass};
+  const email=emailRef.current.value;
+  const value={name:name,password:pass ,email:email};
    setUser([...user,value]);
     
-  if(!name||!pass){
+  if(!name||!pass||!email){
     toast.warning("fill the form")
   }else{
     navagate("/login");
@@ -119,7 +121,9 @@ const [formData,setFormDta]=useState({
             className="form-control"
             id="email"
             name="email"
+            ref={emailRef}
             onChange={handleChange}
+
             style={{ background: "#fff", borderRadius: "5px", boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)" }}
           />
           {error.email && <span  style={{ color: 'red' }}>{error.email}</span>}

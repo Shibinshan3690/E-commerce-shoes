@@ -1,6 +1,8 @@
 import React from 'react'
 import Sidebar from './Sidebar-section/Sidebar'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import DashboardAdmin from '../Products-admi n/DashboardAdmin';
+
 
 
 
@@ -13,8 +15,10 @@ const Admin = () => {
       <div className='col-3'></div>
    </div>
   
+ 
+ 
+ <DashboardAdmin/>
 
- <Sidebar/>
   
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillDashboard, AiFillProfile, AiOutlineHome } from 'react-icons/ai';
+import { AiFillDashboard, AiFillFolderAdd, AiFillProfile, AiOutlineHome } from 'react-icons/ai';
 import { BsFillPieChartFill } from 'react-icons/bs';
 import { IoIosMan } from 'react-icons/io';
 import { FcAbout } from 'react-icons/fc';
@@ -16,11 +16,11 @@ const Sidebar = () => {
       </div>
       <hr className='text-dark' />
       <div className='list-group list-group-flush'>
-      <span > <CustomListItem icon={<AiFillDashboard />  } text="Dashboard" /></span>   
+      <span onClick={()=>navigate('/dashboard')} > <CustomListItem icon={<AiFillDashboard />  } text="Dashboard" /></span>   
       <span  onClick={()=>navigate('/')}>   <CustomListItem    icon={<AiOutlineHome /> } text="Home" /></span>  
       <span  onClick={()=>navigate('/products')}><CustomListItem  icon={<AiFillProfile />} text="Products" /></span>
-        <CustomListItem icon={<BsFillPieChartFill />} text="Report" />
-        <CustomListItem icon={<IoIosMan />} text="Customers" />
+      <span  onClick={()=>navigate('/addproduct')}>    <CustomListItem icon={<AiFillFolderAdd/>} text="Add product" /></span>
+          <span onClick={()=>navigate('/Costomers')}>  <CustomListItem icon={<IoIosMan />} text="Customers" /></span>
         <CustomListItem icon={<FcAbout />} text="About" />
       </div>
     </div>

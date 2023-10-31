@@ -44,8 +44,9 @@ const ProductsAdmin = () => {
                 <td>
                   {item.company}
                 </td>
+                
                 <td>
-                  {item.newName}
+                  {item.newPrice}
                 </td>
                 <td>
                   <img src={item.img} alt={item.name} style={{ width: '100px' }} />

@@ -21,9 +21,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-mens.jpg"
               alt="Men's"
             />
-            <a className="home-image-list-text" href="/" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}} >
+            <span  onClick={()=>navigate('/men')} className="home-image-list-text" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}} >
               MEN'S
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={3}>
@@ -33,9 +33,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-womens.jpg"
               alt="Women's"
             />
-            <a className="home-image-list-text" href="/" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}} >
+            <span  onClick={()=>navigate('/wommen')} className="home-image-list-text"  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}} >
               WOMEN'S
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={3}>
@@ -45,7 +45,7 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-kids.jpg"
               alt="Kids"
             />
-            <a className="home-image-list-text" href="/"  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <a className="home-image-list-text" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               KID'S
             </a>
           </div>
@@ -57,7 +57,7 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-sale.jpg"
               alt="Sale"
             />
-            <a className="home-image-list-text" href="/"  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <a className="home-image-list-text"   style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               SALE
             </a>
           </div>
