@@ -3,14 +3,10 @@ import { userContext } from "../../App";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditProducts = () => {
-
- const navigate=useNavigate();
-
-
   const { product, setProduct } = useContext(userContext);
   const { id } = useParams();
 
-  // Filter the product 
+  // Filter the product
   const filteredProduct = product.filter((item) => item.id == parseInt(id));
 
   // Editing Products
@@ -22,7 +18,7 @@ const EditProducts = () => {
   };
 
   const handleSave = () => {
-    // Map through the products, update the edited product, and keep the rest as is
+    //  update the edited product
     const updatedProductList = product.map((item) =>
       item.id == editingProduct.id ? editingProduct : item
     );
@@ -33,7 +29,7 @@ const EditProducts = () => {
   return (
     <div className="container mt-4">
       <h1>Edit the Products</h1>
-     
+
       <table className="table table-bordered mt-3">
         <thead>
           <tr>
@@ -53,11 +49,11 @@ const EditProducts = () => {
                 {editingProduct && editingProduct.id == item.id ? (
                   <input
                     type="text"
-                    value={editingProduct.name}
+                    value={editingProduct.company}
                     onChange={(e) =>
                       setEditingProduct({
                         ...editingProduct,
-                        name: e.target.value,
+                        company: e.target.value,
                       })
                     }
                     className="form-control"

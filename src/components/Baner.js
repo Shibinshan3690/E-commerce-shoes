@@ -17,23 +17,26 @@ const Baner = () => {
         <Col md={3}>
           <div className="img-container">
             <img
+            onClick={()=>navigate('/men')}
               className="img-fluid home-image-list"
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-mens.jpg"
               alt="Men's"
+              style={{cursor:'pointer'}}
             />
-            <span  onClick={()=>navigate('/men')} className="home-image-list-text" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}} >
+            <span  onClick={()=>navigate('/men')} className="home-image-list-text" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black', cursor:"pointer"}} >
               MEN'S
             </span>
           </div>
         </Col>
         <Col md={3}>
           <div className="img-container">
-            <img
+            <img onClick={()=>navigate('/wommen')}
               className="img-fluid home-image-list"
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-womens.jpg"
               alt="Women's"
+              style={{cursor:'pointer'}}
             />
-            <span  onClick={()=>navigate('/wommen')} className="home-image-list-text"  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}} >
+            <span  onClick={()=>navigate('/wommen')} className="home-image-list-text"  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black',cursor:"pointer"}} >
               WOMEN'S
             </span>
           </div>

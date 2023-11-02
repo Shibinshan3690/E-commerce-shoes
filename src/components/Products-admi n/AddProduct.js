@@ -15,7 +15,7 @@ const AddProduct = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewProduct({
-      ...newProduct,
+      ...newProduct, 
       [name]: value,
     });
   };

@@ -15,6 +15,9 @@ const Men = () => {
   const navigate=useNavigate();
 
 
+  
+
+
   return (
     <>
     <NavigationBar/>

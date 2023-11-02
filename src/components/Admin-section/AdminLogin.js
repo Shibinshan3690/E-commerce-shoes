@@ -9,8 +9,7 @@ const AdminLogin = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    // In a real application, you would perform authentication here.
-    // For simplicity, we'll just check if the username and password are 'admin'.
+      
     if (username === 'admin' && password === 'admin') {
       setLoggedIn(true);
       navigate('/Adminsection');

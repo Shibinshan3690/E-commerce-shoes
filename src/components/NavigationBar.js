@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -8,13 +8,21 @@ import Navbar from "react-bootstrap/Navbar";
 import { Navigate, useNavigate } from "react-router";
 import { BsFillCartFill } from "react-icons/bs";
 import { CgLogOut } from "react-icons/cg";
-import { TbLogout } from "react-icons/tb";
 import { RiAdminFill } from "react-icons/ri";
+import { userContext } from "../App";
+
 
 const NavigationBar = () => {
   const navagate = useNavigate();
+  const{cart,setCart} = useContext(userContext);
+  
+
+  
+
+
+
   return (
-    //First Nav bar
+   
     <>
       <Navbar
         expand="lg"
@@ -35,27 +43,16 @@ const NavigationBar = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           ></Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button
-              variant="outline-success"
-              className="bg-white "
-              style={{ color: "black", fontWeight: "600" }}
-            >
-              Search
-            </Button>
-          </Form>
+          {/* search inputs */}
+         
+          
         </Container>
       </Navbar>
+      
 
       {/* Secxond Navbar */}
-      <div>
-        <Navbar
+      <div   >
+        <Navbar  
           expand="lg"
           className="bg-black "
           style={{ borderBottom: "2px solid white" }}
@@ -92,7 +89,8 @@ const NavigationBar = () => {
               </Nav>
               <Nav>
                 <Nav.Link style={{ fontSize: "27px", color: "white" }} onClick={()=>navagate('/cart')}>
-                  <BsFillCartFill className="ml-3"  />
+                  <BsFillCartFill className="ml-3"   /> 
+                <sup className="icon-cart">{cart.length}</sup>
                 </Nav.Link>
 
                 <Nav.Link
@@ -101,9 +99,7 @@ const NavigationBar = () => {
                 >
                   <CgLogOut className="ml-3" />
                 </Nav.Link>
-                <Nav.Link style={{ fontSize: "27px", color: "white" }}>
-                  <TbLogout className="ml-3" />
-                </Nav.Link>
+                
                 <Nav.Link style={{ fontSize: "27px", color: "white" }}>
                   <RiAdminFill className="ml-3"  onClick={()=>navagate("/adminLogin")} />
                 </Nav.Link>

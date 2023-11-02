@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { userContext } from '../../App';
 import { BsFillCartFill } from 'react-icons/bs';
+import { toast } from 'react-toastify';
 
 const Cart = () => { 
   const { cart, setCart } = useContext(userContext);
-
+    //increment  
   const handleIncrement = (item) => {
     const updatedCart = cart.map((cartItem) => {
       if (cartItem.id === item.id) {
@@ -15,6 +16,8 @@ const Cart = () => {
     setCart(updatedCart);
   };
 
+
+  //dicrement
   const handleDecrement = (item) => {
     const updatedCart = cart.map((cartItem) => {
       if (cartItem.id === item.id && cartItem.quantity > 1) {
@@ -33,9 +36,16 @@ const Cart = () => {
   };
   // Calculate the total cash
   const totalCash = cart.reduce((total, item) => total + item.newPrice * item.quantity, 0);
+  
+
+const {byProduct,setByProduct}=useContext(userContext);
 
 
-
+const handleClick=(id)=>{
+    const buypro=cart.find((item)=>item.id==id)
+    setByProduct([...byProduct,buypro])
+    toast.success("Succefully product puchase")
+}
 
   return (
     <>
@@ -67,6 +77,13 @@ const Cart = () => {
                   onClick={() => handleRemove(item)}
                 >
                   Remove
+                </button>
+
+                <button
+                  className="btn btn-primary"  style={{marginLeft:"10px"}}
+                       onClick={()=>handleClick(item.id)}
+                >
+                  By Now
                 </button>
               </div>
             </div>

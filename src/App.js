@@ -22,33 +22,32 @@ import AddProduct from './components/Products-admi n/AddProduct';
 import DashboardAdmin from './components/Products-admi n/DashboardAdmin';
 import AdminLogin from './components/Admin-section/AdminLogin';
 
-
-
-
-
-
-  export  const userContext=createContext();
+export  const userContext=createContext();
 function App() {
-  const [product,setProduct]=useState(Product); 
-   //Registration 
-   const [user,setUser]=useState([]);
+const [product,setProduct]=useState(Product); 
+ //Registration 
+const [user,setUser]=useState([]);
 //Login 
 
 
  const [login,setLogin]=useState(false);
 
 
+ 
  //Add to cart section
 
  const [cart,setCart]=useState([]);
 
+ //BY product
+
+ const [byProduct ,setByProduct]=useState([]);
 
   return (
 
 
 
     <>
-       <userContext.Provider  value={{product, setProduct,user,setUser,login,setLogin,cart,setCart}} >
+       <userContext.Provider  value={{product, setProduct,user,setUser,login,setLogin,cart,setCart,byProduct,setByProduct}} >
 
 
       
