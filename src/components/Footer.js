@@ -19,25 +19,25 @@ Foot Locker, Inc. is a leading footwear and apparel retailer that unlocks the â€
 <div className='col-md-2 col-lg-2col-xl-2 mx-auto mt-3'>
 <h5 className='text-uppercase mb-4 font-weight-bold'>Products</h5>
 <p>
-  <a href='#' className='text-white' style={{textDecoration:'none',}}>Shoues</a>
+  <span  className='text-white' style={{textDecoration:'none',}}>Shoues</span>
 </p>
 <p>
-  <a href='#' className='text-white' style={{textDecoration:'none'}}>Shoes Products</a>
+  <span  className='text-white' style={{textDecoration:'none'}}>Shoes Products</span>
 </p>
 </div>
 <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mt-3'>
 <h5 className='text-uppercase mb-4 font-weight-bold '>Services</h5>
 <p>
-  <a href='#' className='text-white' style={{textDecoration:'none'}}>Privacy Policy</a>
+  <span  className='text-white' style={{textDecoration:'none'}}>Privacy Policy</span>
 </p>
 <p>
-  <a href='#' className='text-white' style={{textDecoration:'none'}}>Return&Refund Policy</a>
+  <span  className='text-white' style={{textDecoration:'none'}}>Return&Refund Policy</span>
 </p>
 <p>
-  <a href='#' className='text-white' style={{textDecoration:'none'}}>Free Shipping</a>
+  <span  className='text-white' style={{textDecoration:'none'}}>Free Shipping</span>
 </p>
 <p>
-  <a href='#' className='text-white' style={{textDecoration:'none'}}>Security</a>
+  <span  className='text-white' style={{textDecoration:'none'}}>Security</span>
 </p>
 </div>
 <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mt-3'>
