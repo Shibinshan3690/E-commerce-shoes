@@ -2,8 +2,8 @@
 import './App.css';
 import Allcatogory from './components/Allcatogory/Allcatogory';
 import Home from './components/Home';
-import NavigationBar from './components/NavigationBar';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+
+import {Route, Routes} from "react-router-dom";
 import Men from './components/men/Men';
 import Wommen from './components/wommen/Wommen';
 import { createContext, useState } from 'react';
@@ -12,7 +12,7 @@ import Productview from './Productview';
 import Login from './Login/Login';
 import Registration from './components/Registration';
 import Cart from "./components/Cart/Cart";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Admin from './components/Admin-section/Admin';
 import Productsadmin from './components/Products-admi n/Productsadmin';

@@ -42,7 +42,7 @@ const {byProduct,setByProduct}=useContext(userContext);
 
 
 const handleClick=(id)=>{
-    const buypro=cart.find((item)=>item.id==id)
+    const buypro=cart.find((item)=>item.id === id)
     setByProduct([...byProduct,buypro])
     toast.success("Succefully product puchase")
 }

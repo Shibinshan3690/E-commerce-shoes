@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import { Navigate, useNavigate } from "react-router";
+import {  useNavigate } from "react-router";
 import { BsFillCartFill } from "react-icons/bs";
 import { CgLogOut } from "react-icons/cg";
 import {BiLogIn} from 'react-icons/bi'
@@ -15,7 +14,7 @@ import { userContext } from "../App";
 
 const NavigationBar = () => {
   const navagate = useNavigate();
-  const{cart,setCart,login,user} = useContext(userContext);
+  const{cart,login,user} = useContext(userContext);
   
   return (
    

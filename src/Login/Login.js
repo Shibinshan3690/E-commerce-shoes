@@ -61,12 +61,12 @@ const Login = () => {
               <input type='checkbox' className='form-check-input' id='form2Example31' checked />
               <label className='form-check-label' htmlFor='form2Example31' style={{ color: 'white' }}>Remember me</label>
             </div>
-            <a href='#' className='card-link' style={{ color: 'white' }}>Forgot password?</a>
+            <a className='card-link' style={{ color: 'white' }}>Forgot password?</a>
             <button onClick={handleClick} type='button' className='btn btn-primary' style={{ background: 'black', fontWeight: 'bold' }}>Sign in</button>
           </form>
         </div>
         <div className='card-footer text-center' style={{ color: 'white' }}>
-          <a href='#' onClick={() => navigate("/registaration")} className='card-link'>Register</a>
+          <a  onClick={() => navigate("/registaration")} className='card-link'>Register</a>
           <p>or sign up with:</p>
         </div>
       </div>

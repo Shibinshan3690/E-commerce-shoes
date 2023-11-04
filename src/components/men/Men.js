@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router';
 const Men = () => {
  
   const { product } = useContext(userContext);
-  const filterProduct=product.filter((items)=>items.gender==="men");
+  const filterProduct=product.filter((items)=>items.gender ==="men");
 
   const navigate=useNavigate();
 
