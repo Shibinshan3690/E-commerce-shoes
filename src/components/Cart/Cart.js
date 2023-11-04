@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { userContext } from '../../App';
 import { BsFillCartFill } from 'react-icons/bs';
 import { toast } from 'react-toastify';

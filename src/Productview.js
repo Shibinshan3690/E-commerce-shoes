@@ -11,7 +11,7 @@ const Productview = () => {
    const navagate=useNavigate();
     const {product}=useContext(userContext);
        const {id}=useParams();
-       const products = product.filter((item) => item.id == parseInt(id));
+       const products = product.filter((item) => item.id === parseInt(id));
     
   //Add to cart//
         
@@ -19,7 +19,7 @@ const {cart,setCart,login}=useContext(userContext);
    const myCart=()=>{
         if(login){
           const [newData]=products;
-          const dublicate=cart.filter((item)=>item.id==id);
+          const dublicate=cart.filter((item)=>item.id === id);
 
           if(dublicate.length>0){
               return toast.warning("Product already existed");
