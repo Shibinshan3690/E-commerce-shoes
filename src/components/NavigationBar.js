@@ -31,8 +31,7 @@ const NavigationBar = () => {
           >
             Foot Locker
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" className="color-white" />
-
+         
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}

@@ -1,7 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { userContext } from '../App';
-import { Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -62,12 +61,12 @@ const Login = () => {
               <input type='checkbox' className='form-check-input' id='form2Example31' checked />
               <label className='form-check-label' htmlFor='form2Example31' style={{ color: 'white' }}>Remember me</label>
             </div>
-            <Link className='card-link' style={{ color: 'white' }}>Forgot password?</Link>
+            < span className='card-link' style={{ color: 'white' }}>Forgot password?</span>
             <button onClick={handleClick} type='button' className='btn btn-primary' style={{ background: 'black', fontWeight: 'bold' }}>Sign in</button>
           </form>
         </div>
         <div className='card-footer text-center' style={{ color: 'white' }}>
-          <Link onClick={() => navigate("/registaration")} className='card-link'>Register</Link>
+          <span onClick={()=>navigate("/registaration")} className='card-link'>Register</span>
           <p>or sign up with:</p>
         </div>
       </div>
