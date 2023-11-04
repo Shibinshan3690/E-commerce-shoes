@@ -3,9 +3,9 @@ import { userContext } from '../../App';
 import { toast } from 'react-toastify';
 
 const AddProduct = () => {
-  const { product, setProduct } = useContext(userContext);
+  const {product, setProduct } = useContext(userContext);
   const [newProduct, setNewProduct] = useState({
-    id: product.length + 1, // Generate a unique ID for the new product
+    id: product.length + 1, 
     name:'',
     title:'',
     newPrice:'',

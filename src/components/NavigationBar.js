@@ -8,19 +8,15 @@ import Navbar from "react-bootstrap/Navbar";
 import { Navigate, useNavigate } from "react-router";
 import { BsFillCartFill } from "react-icons/bs";
 import { CgLogOut } from "react-icons/cg";
+import {BiLogIn} from 'react-icons/bi'
 import { RiAdminFill } from "react-icons/ri";
 import { userContext } from "../App";
 
 
 const NavigationBar = () => {
   const navagate = useNavigate();
-  const{cart,setCart} = useContext(userContext);
+  const{cart,setCart,login,user} = useContext(userContext);
   
-
-  
-
-
-
   return (
    
     <>
@@ -83,7 +79,7 @@ const NavigationBar = () => {
                   style={{ color: "white", fontWeight: 600 }}
                 >
                   {" "}
-                  Wommen{" "}
+                  Women{" "}
                 </Nav.Link>
                
               </Nav>
@@ -93,12 +89,26 @@ const NavigationBar = () => {
                 <sup className="icon-cart">{cart.length}</sup>
                 </Nav.Link>
 
-                <Nav.Link
-                  onClick={() => navagate("/login")}
-                  style={{ fontSize: "27px", color: "white" }}
-                >
-                  <CgLogOut className="ml-3" />
-                </Nav.Link>
+                {login?   
+                ( <Nav.Link
+                 onClick={() => navagate("/login")}
+                 style={{ fontSize: "27px", color: "white" }}  
+               > {user.map((userData, index) => (
+              <tr key={index}>
+                
+                <td  style={{fontSize:'14px'}}>{userData.name}</td>
+              </tr>
+            ))}
+                 <CgLogOut className="ml-3" /><span></span>
+               </Nav.Link>):(
+               <Nav.Link
+                 onClick={() => navagate("/login")}s
+                 style={{ fontSize: "27px", color: "white" }}
+                 
+               >
+                 <BiLogIn className="ml-3" />
+               </Nav.Link>)
+                }
                 
                 <Nav.Link style={{ fontSize: "27px", color: "white" }}>
                   <RiAdminFill className="ml-3"  onClick={()=>navagate("/adminLogin")} />

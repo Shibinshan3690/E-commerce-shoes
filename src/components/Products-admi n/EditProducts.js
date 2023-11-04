@@ -18,7 +18,7 @@ const EditProducts = () => {
   };
 
   const handleSave = () => {
-    //  update the edited product
+    // update the edited product
     const updatedProductList = product.map((item) =>
       item.id == editingProduct.id ? editingProduct : item
     );

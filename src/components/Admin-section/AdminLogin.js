@@ -1,28 +1,35 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
-      
-    if (username === 'admin' && password === 'admin') {
+    if (username === "admin" && password === "admin") {
       setLoggedIn(true);
-      navigate('/Adminsection');
-    
+      navigate("/Adminsection");
     }
   };
-
   return (
-    <div className="container">
+    <div className="container" style={{ width: "400px", padding: "50px" }}>
       <div className="mt-5">
-        <h1 className="display-4">Admin Login</h1>
+        <h1
+          className="display-4"
+          style={{ fontSize: "40px", fontWeight: "600", fontFamily: "initial" }}
+        >
+          Admin Login
+        </h1>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label
+            htmlFor="username"
+            style={{ fontWeight: "lighter", fontWeight: "600" }}
+          >
+            Username
+          </label>
           <input
             type="text"
             className="form-control" // Customize this class or add custom styles
@@ -32,7 +39,12 @@ const AdminLogin = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+          <label
+            htmlFor="password"
+            style={{ fontWeight: "lighter", fontWeight: "600" }}
+          >
+            Password
+          </label>
           <input
             type="password"
             className="form-control" // Customize this class or add custom styles
@@ -42,7 +54,7 @@ const AdminLogin = () => {
           />
         </div>
         <button
-          className="btn btn-primary" // Customize this class or add custom styles
+         className="btn btn-primary" // Customize this class or add custom styles
           onClick={handleLogin}
         >
           Login

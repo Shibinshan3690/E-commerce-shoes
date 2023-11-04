@@ -27,39 +27,16 @@ const Searchess=product.filter((value)=>{
     return value
   }
 })
-
-
-
   return (
     <>
       <NavigationBar />
-
-      {/* <div className="d-flex">
-  <Form    style={{marginLeft:'-220px' ,marginTop:'-90px',  display:'flex'}}>
-    <FormControl      
-      type="search"
-      placeholder="Search"
-      className="me-2"
-      aria-label="Search"
-     
-      style={{ height: '45px', width: '400px', position: 'relative', left: '600px', top: '30px' }}
-    />
-    
-  </Form>
-</div> */} 
-
-
-<Form className="d-flex w-25 position-absolute m-5" style={{zIndex:"99",right:"6.1rem" ,top:"1.8rem"}} >
+     <Form className="d-flex w-25 position-absolute m-5" style={{zIndex:"99",right:"6.1rem" ,top:"1.8rem"}} >
             <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
               onChange={(ev) => { setSearch(ev.target.value) }}
-              
-     
-              
-             
-            
+
             />
             <Button
               variant="outline-success"
@@ -70,9 +47,6 @@ const Searchess=product.filter((value)=>{
               Search
             </Button>   
           </Form>
-
-
-
       <Container>
       <div className='row justify-content-center'>
         {Searchess.map((item) => (
