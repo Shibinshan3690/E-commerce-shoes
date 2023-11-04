@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Card, Container, Navbar } from 'react-bootstrap';
+import { Button, Card, Container } from 'react-bootstrap';
 import { Footer } from '../Footer';
 import { userContext } from '../../App';
 import NavigationBar from '../NavigationBar';

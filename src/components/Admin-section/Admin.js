@@ -1,5 +1,4 @@
 import React from 'react'
-import Sidebar from './Sidebar-section/Sidebar'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import DashboardAdmin from '../Products-admi n/DashboardAdmin';
 

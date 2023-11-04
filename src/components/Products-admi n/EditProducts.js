@@ -1,26 +1,26 @@
 import React, { useContext, useState } from "react";
 import { userContext } from "../../App";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const EditProducts = () => {
   const { product, setProduct } = useContext(userContext);
   const { id } = useParams();
 
   // Filter the product
-  const filteredProduct = product.filter((item) => item.id == parseInt(id));
+  const filteredProduct = product.filter((item) => item.id === parseInt(id));
 
   // Editing Products
   const [editingProduct, setEditingProduct] = useState(null);
 
   const handleEdit = (id) => {
-    const productToEdit = product.find((item) => item.id == id);
+    const productToEdit = product.find((item) => item.id === id);
     setEditingProduct(productToEdit);
   };
 
   const handleSave = () => {
     // update the edited product
     const updatedProductList = product.map((item) =>
-      item.id == editingProduct.id ? editingProduct : item
+      item.id === editingProduct.id ? editingProduct : item
     );
     setProduct(updatedProductList);
     setEditingProduct(null); // Clear the editing state
@@ -46,7 +46,7 @@ const EditProducts = () => {
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>
-                {editingProduct && editingProduct.id == item.id ? (
+                {editingProduct && editingProduct.id === item.id ? (
                   <input
                     type="text"
                     value={editingProduct.company}
@@ -63,7 +63,7 @@ const EditProducts = () => {
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.id == item.id ? (
+                {editingProduct && editingProduct.id === item.id ? (
                   <input
                     type="text"
                     value={editingProduct.title}
@@ -80,7 +80,7 @@ const EditProducts = () => {
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.id == item.id ? (
+                {editingProduct && editingProduct.id === item.id ? (
                   <input
                     type="text"
                     value={editingProduct.newPrice}
@@ -97,7 +97,7 @@ const EditProducts = () => {
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.id == item.id ? (
+                {editingProduct && editingProduct.id === item.id ? (
                   <input
                     type="text"
                     value={editingProduct.img}
@@ -114,7 +114,7 @@ const EditProducts = () => {
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.id == item.id ? (
+                {editingProduct && editingProduct.id === item.id ? (
                   <input
                     type="text"
                     value={editingProduct.category}

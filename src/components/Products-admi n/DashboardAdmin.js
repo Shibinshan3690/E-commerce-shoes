@@ -5,7 +5,7 @@ import { userContext } from "../../App";
 const DashboardAdmin = () => {
   // By Product
 
-  const { byProduct, cart } = useContext(userContext);
+  const {  cart } = useContext(userContext);
   // Calculate the total cash
   const totalCash = cart.reduce(
     (total, item) => total + item.newPrice * item.quantity,

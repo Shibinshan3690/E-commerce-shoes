@@ -8,69 +8,67 @@ import { Footer } from '../Footer';
 import { useNavigate } from 'react-router';
 import "./Allcatogary.css";
 import { useState } from 'react';
-import { Form, FormControl } from 'react-bootstrap';
-
+import { Form } from 'react-bootstrap';
 
 const AllCategory = () => {
-const { product } = useContext(userContext);
-const navigate=useNavigate();
-//Serch product
+  const { product } = useContext(userContext);
+  const navigate = useNavigate();
 
-const [search,setSearch]=useState("");
+  // Search product
+  const [search, setSearch] = useState("");
 
-const Searchess=product.filter((value)=>{
-  if(search==""){
-    return  value;
+  const Searchess = product.filter((value) => {
+    if (search === "") {
+      return value;
+    } else if (value.title.toLowerCase().includes(search.toLowerCase())) {
+      return value;
+    }else{
+      return "";
+    }
+  });
 
-  }else
-  if(value.title.toLowerCase().includes(search.toLowerCase())){
-    return value
-  }
-})
   return (
     <>
       <NavigationBar />
-     <Form className="d-flex w-25 position-absolute m-5" style={{zIndex:"99",right:"6.1rem" ,top:"1.8rem"}} >
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              onChange={(ev) => { setSearch(ev.target.value) }}
-
-            />
-            <Button
-              variant="outline-success"
-              className="bg-white "
-              style={{ color: "black", fontWeight: "600" }}
-           
-            >
-              Search
-            </Button>   
-          </Form>
+      <Form className="d-flex w-25 position-absolute m-5" style={{ zIndex: "99", right: "6.1rem", top: "1.8rem" }}>
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          onChange={(ev) => { setSearch(ev.target.value) }}
+        />
+        <Button
+          variant="outline-success"
+          className="bg-white"
+          style={{ color: "black", fontWeight: "600" }}
+        >
+          Search
+        </Button>
+      </Form>
       <Container>
-      <div className='row justify-content-center'>
-        {Searchess.map((item) => (
-          <Card style={{ width: '15rem' }} className='p-3 m-3 product-card' key={item.id}>
-            <div className="product-image-container">
-              <Card.Img variant="top" src={item.img} />
-            </div>
-            <Card.Body>
-              <Card.Title>{item.title}</Card.Title>
-              <Card.Text>
-                {Array(item.star).fill(<span key={item.id} className="star">★★★★</span>)}
-              </Card.Text>
-              <div className="product-price">
-                $ {item.newPrice}
+        <div className='row justify-content-center'>
+          {Searchess.map((item) => (
+            <Card style={{ width: '15rem' }} className='p-3 m-3 product-card' key={item.id}>
+              <div className="product-image-container">
+                <Card.Img variant="top" src={item.img} />
               </div>
-              <Button onClick={() => navigate(`/view/${item.id}`)} style={{backgroundColor:'black'}} className="view-button">
-                View
-              </Button>
-            </Card.Body>
-          </Card>
-        ))}
-      </div>
-    </Container>
-     <Footer/>
+              <Card.Body>
+                <Card.Title>{item.title}</Card.Title>
+                <Card.Text>
+                  {Array(item.star).fill(<span key={item.id} className="star">★★★★</span>)}
+                </Card.Text>
+                <div className="product-price">
+                  $ {item.newPrice}
+                </div>
+                <Button onClick={() => navigate(`/view/${item.id}`)} style={{ backgroundColor: 'black' }} className="view-button">
+                  View
+                </Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
+      </Container>
+      <Footer />
     </>
   );
 }

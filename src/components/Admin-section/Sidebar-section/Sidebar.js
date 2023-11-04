@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillDashboard, AiFillFolderAdd, AiFillProfile, AiOutlineHome } from 'react-icons/ai';
-import { BsFillPieChartFill } from 'react-icons/bs';
 import { IoIosMan } from 'react-icons/io';
 import { FcAbout } from 'react-icons/fc';
 import './Sidebar.css'; // Import your custom CSS for additional styling
@@ -29,10 +28,10 @@ const Sidebar = () => {
 
 const CustomListItem = ({ icon, text }) => {
   return (
-    <a className='list-group-item list-group-item-action my-2 custom-list-item'>
+    <span className='list-group-item list-group-item-action my-2 custom-list-item'>
       <i>{icon}</i>
       <span>{text}</span>
-    </a>
+    </span>
   );
 };
 

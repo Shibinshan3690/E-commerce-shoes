@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { BsFillCartFill } from 'react-icons/bs';
 import Sidebar from '../Admin-section/Sidebar-section/Sidebar';
 import { userContext } from '../../App';

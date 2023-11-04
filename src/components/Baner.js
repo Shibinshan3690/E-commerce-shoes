@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 
 
@@ -48,9 +48,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-kids.jpg"
               alt="Kids"
             />
-            <a className="home-image-list-text" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text" style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               KID'S
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={3}>
@@ -60,9 +60,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/2023/september/230912-fl-hp-category-6up-update-sale.jpg"
               alt="Sale"
             />
-            <a className="home-image-list-text"   style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text"   style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               SALE
-            </a>
+            </span>
           </div>
         </Col>
       </Row>
@@ -161,9 +161,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/footlocker/site/homepage/20200306-Nike-Air-Force-1-Restock-6up.jpg"
               alt="Nike Air Force 1"
             />
-            <a className="home-image-list-text" onClick={()=>navigate("/allcatogory")}  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text" onClick={()=>navigate("/allcatogory")}  style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               New Arrival
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={2}>
@@ -173,9 +173,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-Z0790161.jpg"
               alt="New Arrival"
             />
-            <a className="home-image-list-text"  onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text"  onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               New Arrival
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={2}>
@@ -185,9 +185,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-26276001.jpg"
               alt="New Arrival"
             />
-            <a className="home-image-list-text" onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text" onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               New Arrival
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={2}>
@@ -197,9 +197,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-IF6679.jpg"
               alt="New Arrival"
             />
-            <a className="home-image-list-text"  onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text"  onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               New Arrival
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={2}>
@@ -209,9 +209,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-28825411.jpg"
               alt="New Arrival"
             />
-            <a className="home-image-list-text" onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text" onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               New Arrival
-            </a>
+            </span>
           </div>
         </Col>
         <Col md={2}>
@@ -221,9 +221,9 @@ const Baner = () => {
               src="https://images.footlocker.com/content/dam/final/FootLockerInc/site/new-arrivals/new-arrival-6up-D9082102.jpg"
               alt="New Arrival"
             />
-            <a className="home-image-list-text" onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
+            <span className="home-image-list-text" onClick={()=>navigate("/allcatogory")} style={{textDecoration:'none', fontFamily:"fantasy" ,color:'black'}}>
               New Arrival
-            </a>
+            </span>
           </div>
         </Col>
       </Row>
