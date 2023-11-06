@@ -15,18 +15,24 @@ const Registration = () => {
   const emailRef = useRef();
 
   const handleClick = () => {
-    const name = nameRef.current.value;
-    const pass = passRef.current.value;
-    const email = emailRef.current.value;
-    const value = { name: name, password: pass, email: email };
-    setUser([...user, value]);
-
-    if (!name || !pass || !email) {
-      toast.warning("fill the form");
+    const name = formData.userName;
+    const pass = formData.password;
+    const email = formData.email;
+  
+    // Check if the username already exists
+    if (user.some((existingUser) => existingUser.name === name)) {
+      toast.warning("Username is already taken");
     } else {
-      navagate("/login");
+      const value = { name, password: pass, email };
+      setUser([...user, value]);
+      if (!name || !pass || !email) {
+        toast.warning("Fill the form");
+      } else {
+        navagate("/login");
+      }
     }
   };
+  
 
   //Form Validation
 
@@ -72,8 +78,9 @@ const Registration = () => {
     }
     setError(validationError);
     if (Object.keys(validationError).length === 0) {
-      alert("Form Submited succefully");
+        toast.success("Form Submited succefully");
     }
+    
   };
 
   return (
