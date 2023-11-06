@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { userContext } from "./App";
-import { Navigate, useNavigate, useParams } from "react-router";
+import {  useNavigate, useParams } from "react-router";
 import { Button, Card, Container } from "react-bootstrap";
 import NavigationBar from "./components/NavigationBar";
 import { Footer } from "./components/Footer";
