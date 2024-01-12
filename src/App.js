@@ -2,7 +2,6 @@
 import './App.css';
 import Allcatogory from './components/Allcatogory/Allcatogory';
 import Home from './components/Home';
-
 import {Route, Routes} from "react-router-dom";
 import Men from './components/men/Men';
 import Wommen from './components/wommen/Wommen';
@@ -27,8 +26,9 @@ function App() {
 const [product,setProduct]=useState(Product); 
  //Registration 
 const [user,setUser]=useState([]);
-//Login 
 
+
+//Login 
 
  const [login,setLogin]=useState(false);
 

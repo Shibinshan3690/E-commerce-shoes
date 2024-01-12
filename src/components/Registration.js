@@ -1,87 +1,47 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import { useRef } from "react";
-import { userContext } from "../App";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import axios from "axios";
+
 
 const Registration = () => {
-  const navagate = useNavigate();
+  const navigate=
 
-  //Login  page
-  const { user, setUser } = useContext(userContext);
-  const nameRef = useRef();
-  const passRef = useRef();
-  const emailRef = useRef();
+const handleSubmit=async (e)=>{
+  e.preventDefault();
 
-  const handleClick = () => {
-    const name = formData.userName;
-    const pass = formData.password;
-    const email = formData.email;
+  const name=e.target.name.value.trim();
+  const email=e.taget.email.value.trim();
+  const username=e.taget.username.value.trim();
+  const password=e.taget.password.value.trim();
+
+  if (name === "" || email === "" || username === "" || password === "") {
+    toast.error("Enter All the Inputs");
+ }else{
+
+  try{
+       const userData={name,email,username,password};
+
+     const response=await axios.post("http://localhost:3000/api/users/register",userData);
+     if(response.status===201){
+        toast.success(response.data.message);
+        navi
+     }
+
+
+
+  }catch(error){
+    toast.error(error);
+  }
+ }
+
+
+
+}
   
-    // Check if the username already exists
-    if (user.some((existingUser) => existingUser.name === name)) {
-      toast.warning("Username is already taken");
-    } else {
-      const value = { name, password: pass, email };
-      setUser([...user, value]);
-      if (!name || !pass || !email) {
-        toast.warning("Fill the form");
-      } else {
-        navagate("/login");
-      }
-    }
-  };
-  
 
-  //Form Validation
-
-  const [formData, setFormDta] = useState({
-    userName: "",
-    email: "",
-    password: "",
-    cPassword: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormDta({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  //error Object
-
-  const [error, setError] = useState({});
-
-  //Handle Submit
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationError = {};
-    if (!formData.userName.trim()) {
-      validationError.userName = "username is requred";
-    }
-    if (!formData.email.trim()) {
-      validationError.email = "email is requred";
-    } else if (!/\S+@\S\.\S+/.test(formData.email)) {
-      validationError.email = "email is not valid";
-    }
-    if (!formData.password.trim()) {
-      validationError.password = "password is requred";
-    } else if (formData.password.length > 6) {
-      validationError.password = "password should  be at least 6 characters";
-    }
-    if (formData.cPassword !== formData.password) {
-      validationError.cPassword = "password not matched";
-    }
-    setError(validationError);
-    if (Object.keys(validationError).length === 0) {
-        toast.success("Form Submited succefully");
-    }
-    
-  };
+ 
 
   return (
     <>
@@ -89,7 +49,7 @@ const Registration = () => {
         <div className="row justify-content-center">
           <div className="col-md-6">
             <form
-              onSubmit={handleSubmit}
+              
               className="card p-4"
               style={{
                 background: "black",
@@ -115,17 +75,15 @@ const Registration = () => {
                   className="form-control"
                   id="userName"
                   name="userName"
-                  ref={nameRef}
-                  onChange={handleChange}
+                
+               
                   style={{
                     background: "#fff",
                     borderRadius: "5px",
                     boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
                   }}
                 />
-                {error.userName && (
-                  <span style={{ color: "red" }}>{error.userName}</span>
-                )}
+                
               </div>
 
               <div className="mb-3">
@@ -141,17 +99,15 @@ const Registration = () => {
                   className="form-control"
                   id="email"
                   name="email"
-                  ref={emailRef}
-                  onChange={handleChange}
+                 
                   style={{
                     background: "#fff",
                     borderRadius: "5px",
                     boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
                   }}
                 />
-                {error.email && (
-                  <span style={{ color: "red" }}>{error.email}</span>
-                )}
+               
+                
               </div>
 
               <div className="mb-3">
@@ -167,17 +123,14 @@ const Registration = () => {
                   className="form-control"
                   id="password"
                   name="password"
-                  ref={passRef}
-                  onChange={handleChange}
+                  
                   style={{
                     background: "#fff",
                     borderRadius: "5px",
                     boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
                   }}
                 />
-                {error.password && (
-                  <span style={{ color: "red" }}>{error.password}</span>
-                )}
+                
               </div>
 
               <div className="mb-3">
@@ -193,16 +146,14 @@ const Registration = () => {
                   className="form-control"
                   id="cPassword"
                   name="cPassword"
-                  onChange={handleChange}
+                
                   style={{
                     background: "#fff",
                     borderRadius: "5px",
                     boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
                   }}
                 />
-                {error.cPassword && (
-                  <span style={{ color: "red" }}>{error.cPassword}</span>
-                )}
+               
               </div>
 
               <div className="form-check">
@@ -221,7 +172,7 @@ const Registration = () => {
               </div>
 
               <button
-                onClick={handleClick}
+               
                 className="btn btn-primary mt-3"
                 style={{ background: "black", color: "white", fontWeight: 600 }}
               >

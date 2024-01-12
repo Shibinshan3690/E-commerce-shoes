@@ -5,6 +5,7 @@ import { Button, Card, Container } from "react-bootstrap";
 import NavigationBar from "./components/NavigationBar";
 import { Footer } from "./components/Footer";
 import { toast } from "react-toastify";
+import "../src/components/Cart/Product.css"
 
 const Productview = () => {
   const navagate = useNavigate();
@@ -38,6 +39,22 @@ const Productview = () => {
   return (
     <>
       <NavigationBar />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <Container>
         <div className="row justify-content-center">
@@ -82,8 +99,8 @@ const Productview = () => {
             </Card>
           ))}
         </div>
-      </Container>
-      <Footer />
+      </Container> 
+       <Footer />
     </>
   );
 };

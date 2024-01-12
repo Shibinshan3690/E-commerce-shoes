@@ -48,7 +48,7 @@ const AllCategory = () => {
       <Container>
         <div className='row justify-content-center'>
           {Searchess.map((item) => (
-            <Card style={{ width: '15rem' }} className='p-3 m-3 product-card' key={item.id}>
+            <Card style={{ width: '12rem' }} className='p-3 m-3 product-card' key={item.id}>
               <div className="product-image-container">
                 <Card.Img variant="top" src={item.img} />
               </div>
