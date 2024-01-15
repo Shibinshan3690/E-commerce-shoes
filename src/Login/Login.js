@@ -1,37 +1,11 @@
-import React, { useContext, useRef, useState } from 'react';
+import axios from 'axios';
+import React, {  useRef, useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router';
-import { userContext } from '../App';
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
-  const navigate = useNavigate();
-
-  const { user, setLogin } = useContext(userContext);
-
-  const nameRef = useRef();
-  const passRef = useRef();
-
-  const [error, setError] = useState('');
-
-  const handleClick = () => {
-    const name = nameRef.current.value;
-    const password = passRef.current.value;
-
-    // form validation
-    if (!name || !password) {
-      setError('Please fill in all fields');
-      return;
-    }
-
-    const findUser = user.find((item) => item.name === name && item.password === password);
-
-    if (findUser) {
-      setLogin(true);
-      navigate('/');
-    } else {
-      setError('Incorrect username or password');
-    }
-  };
-
+  
 
 
 
@@ -50,11 +24,11 @@ const Login = () => {
           <form>
             <div className='mb-3'>
               <label htmlFor='form2Example1' className='form-label' style={{ color: 'white' }}>User Name</label>
-              <input type='email' id='form2Example1' className='form-control' ref={nameRef} style={{ background: '#333', border: '1px solid #555', color: 'white' }} />
+              <input type='email' id='form2Example1' className='form-control' ref={userNameRef} style={{ background: '#333', border: '1px solid #555', color: 'white' }} />
             </div>
             <div className='mb-3'>
               <label htmlFor='form2Example2' className='form-label' style={{ color: 'white' }}>Password</label>
-              <input type='password' id='form2Example2' className='form-control' ref={passRef} style={{ background: '#333', border: '1px solid #555', color: 'white' }} />
+              <input type='password' id='form2Example2' className='form-control' ref={passwordRef} style={{ background: '#333', border: '1px solid #555', color: 'white' }} />
               {error && <div className="text-danger" style={{ color: 'red' }}>{error}</div>}
             </div>
             <div className='mb-3 form-check'>
@@ -76,6 +50,6 @@ const Login = () => {
 
     </>
   );
-}
+  }
 
 export default Login;
