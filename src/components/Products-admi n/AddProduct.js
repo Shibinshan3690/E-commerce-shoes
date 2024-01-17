@@ -1,40 +1,52 @@
 import React, { useContext, useState } from 'react';
 import { userContext } from '../../App';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const AddProduct = () => {
-  const {product, setProduct } = useContext(userContext);
+  const { product, setProduct } = useContext(userContext);
   const [newProduct, setNewProduct] = useState({
-    id: product.length + 1, 
-    name:'',
-    title:'',
-    newPrice:'',
+    name: '',
+    title: '',
+    newPrice: '',
     img: '',
     category: '',
   });
-  const handleInputChange = (e) => {
+  console.log('Sending request with data:', newProduct);
+  const handleInputChange = async (e) => {
     const { name, value } = e.target;
     setNewProduct({
-      ...newProduct, 
+      ...newProduct,
       [name]: value,
     });
+   
+
   };
-  const handleAddProduct = () => {
-    if (newProduct.name && newProduct.title && newProduct.newPrice) {
-      // Check if required fields are filled
-      setProduct([...product, newProduct]);
-      setNewProduct({
-        id: product.length + 1,
-        name: '',
-        title: '',
-        newPrice: '',
-        img: '',
-        category: '',
-      });
-    } else {
-      toast.warning('Please fill in all required fields.');
+
+  const handleAddProduct = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/api/admin/createProduct', newProduct);
+      
+      if (response.data.status === 'success') {
+        toast.success('Product created successfully');
+        setProduct([...product, response.data.data]);
+        console.log(setProduct)
+        setNewProduct({
+          name: '',
+          title: '',
+          newPrice: '',
+          img: '',
+          category: '',
+        });
+      } else {
+        toast.error('Failed to create product');
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error('Something went wrong');
     }
   };
+
   return (
     <div className="container mt-5">
       <h2>Add a Product</h2>

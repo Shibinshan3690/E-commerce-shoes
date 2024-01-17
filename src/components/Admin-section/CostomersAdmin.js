@@ -1,9 +1,26 @@
-import React, { useContext } from 'react';
-import { userContext } from '../../App';
+import React, { useEffect, useState } from 'react';
 import Sidebar from './Sidebar-section/Sidebar';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+
+
 
 const CostomersAdmin = () => {
-  const { user } = useContext(userContext);
+const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+      const allUsers=async()=>{
+          try{
+            const response=await axios.get("http://localhost:5000/api/admin/users")
+            console.log(response.data.data);
+            setUsers(response.data.data)
+          }catch(error){
+      toast.error(error.message||"failed fecth user")
+      }
+    }
+  
+      allUsers()
+  }, []);
 
   return (
     <>
@@ -18,10 +35,10 @@ const CostomersAdmin = () => {
             </tr>
           </thead>
           <tbody>
-            {user.map((userData, index) => (
+            {users.map((users, index) => (
               <tr key={index}>
-                <td>{userData.email}</td>
-                <td>{userData.name}</td>
+                <td>{users.email}</td>
+                <td>{users.name}</td>
               </tr>
             ))}
           </tbody>
