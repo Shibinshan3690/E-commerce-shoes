@@ -1,109 +1,131 @@
-import React, { useContext, useState } from 'react';
-import { userContext } from '../../App';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+// import { Axios } from '../../App';
+
+
 
 const AddProduct = () => {
-  const { product, setProduct } = useContext(userContext);
-  const [newProduct, setNewProduct] = useState({
-    name: '',
-    title: '',
-    newPrice: '',
-    img: '',
-    category: '',
-  });
-  console.log('Sending request with data:', newProduct);
-  const handleInputChange = async (e) => {
-    const { name, value } = e.target;
-    setNewProduct({
-      ...newProduct,
-      [name]: value,
-    });
-   
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
 
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleAddProduct = async () => {
+    if (!title || !category || !price || !description || !image) {
+      toast.error('Please fill in all fields.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('category', category);
+    formData.append('price', price);
+    formData.append('description', description);
+    formData.append('image', image);
+
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/createProduct', newProduct);
+      // const jwtToken = localStorage.getItem('jwt');
       
-      if (response.data.status === 'success') {
-        toast.success('Product created successfully');
-        setProduct([...product, response.data.data]);
-        console.log(setProduct)
-        setNewProduct({
-          name: '',
-          title: '',
-          newPrice: '',
-          img: '',
-          category: '',
-        });
+      const response = await axios.post(
+        'http://localhost:5000/api/admin/createProduct',
+        formData,
+        {
+          headers: {
+            // 'Authorization': `Bearer ${jwtToken}`, // Uncomment if needed
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      
+      
+      
+
+      
+
+      if (response.status === 201) {
+        toast.success('Product added successfully!');
       } else {
-        toast.error('Failed to create product');
+        toast.error('Failed to add product.');
       }
     } catch (error) {
-      console.error(error);
-      toast.error('Something went wrong');
+      console.error('Error uploading product:', error);
     }
   };
 
   return (
-    <div className="container mt-5">
-      <h2>Add a Product</h2>
-      <div className="form-group">
-        <label>Name:</label>
-        <input
-          type="text"
-          className="form-control"
-          name="name"
-          value={newProduct.name}
-          onChange={handleInputChange}
-        />
+    <section>
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-md-6">
+            <h2 className="text-center">Add Product</h2>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                name="title"
+                className="form-control"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+
+              <label htmlFor="type" className="form-label">
+                Category
+              </label>
+              <input
+                type="text"
+                name="category"
+                className="form-control"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              />
+
+              <label htmlFor="price" className="form-label">
+                Price
+              </label>
+              <input
+                type="text"
+                name="price"
+                className="form-control"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+
+              <label htmlFor="description" className="form-label">
+                Description
+              </label>
+              <input
+                type="text"
+                name="description"
+                className="form-control"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+
+              <label htmlFor="image" className="form-label">
+                Image
+              </label>
+              <input
+                type="text"
+                name="image"
+                className="form-control"
+                onChange={(e) => setImage(e.target.value)}
+              />
+
+              <button type="submit" className="btn btn-success mt-2 mb-5">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div className="form-group">
-        <label>Title:</label>
-        <input
-          type="text"
-          className="form-control"
-          name="title"
-          value={newProduct.title}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
-        <label>Price:</label>
-        <input
-          type="text"
-          className="form-control"
-          name="newPrice"
-          value={newProduct.newPrice}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
-        <label>Image URL:</label>
-        <input
-          type="text"
-          className="form-control"
-          name="img"
-          value={newProduct.img}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
-        <label>Category:</label>
-        <input
-          type="text"  
-          className="form-control"
-          name="category"   
-          value={newProduct.category}     
-          onChange={handleInputChange}   
-        />
-      </div>
-      <button className="btn btn-primary" onClick={handleAddProduct}>
-        Add Product
-      </button>
-    </div>
+    </section>
   );
 };
+
 export default AddProduct;

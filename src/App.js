@@ -20,6 +20,17 @@ import CostomersAdmin from './components/Admin-section/CostomersAdmin';
 import AddProduct from './components/Products-admi n/AddProduct';
 import DashboardAdmin from './components/Products-admi n/DashboardAdmin';
 import AdminLogin from './components/Admin-section/AdminLogin';
+import axios from 'axios'
+// import { create } from '../../../Backend/Models/productSchema';
+
+
+export const Axios = axios.create({
+  baseURL:process.env.REACT_APP_BASE_URL,
+  headers:{
+    "Content-Type":"application/json",
+    Authorization: localStorage.getItem('jwt'),
+  }
+})
 
 export  const userContext=createContext();
 function App() {

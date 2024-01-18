@@ -17,11 +17,6 @@ const ProductsAdmin = () => {
   };
 
 
-
- 
-
-  
-
   return (
     <>
       <Sidebar />
